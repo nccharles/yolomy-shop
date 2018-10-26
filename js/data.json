@@ -1,0 +1,60 @@
+{
+ "products":[
+    {
+      "id": 1,
+      "name": "Bag Pack",
+      "description": "Best Bag",
+      "price": 60.00,
+      "gender": "",
+      "img": "assets/products/backpack.png",   
+      "category": "Utilities"
+    },
+    {
+      "id": 2,
+      "name": "Giacket",
+      "description": "Giacket",
+      "price": 60.00,
+      "gender": "",
+      "img": "assets/products/giacket.png",   
+      "category": "clothers"
+    },
+    {
+      "id": 3,
+      "name": "Pants Forclaz",
+      "description": "Pants Forclaz",
+      "price": 30.00,
+      "gender": "",
+      "img": "assets/products/pants.png",   
+      "category": "clothers"
+    },
+    {
+      "id": 4,
+      "name": "tre king shoes",
+      "description": "Shoes",
+      "price": 80.00,
+      "gender": "",
+      "img": "assets/products/trekkingshoes.png",   
+      "category": "shoes"
+    },
+    {
+      "id": 5,
+      "name": "tshirt ladies",
+      "description": "tshirt ladies",
+      "price": 20.00,
+      "gender": "",
+      "img": "assets/products/tshirt_ladies.png",   
+      "category": "clothers"
+    },
+    {
+      "id": 6,
+      "name": "T shirt",
+      "description": "t shirt",
+      "price": 5.0,
+      "gender": "",
+      "img": "assets/products/tshirt.png",   
+      "category": "clothers"
+    }
+  ]
+  
+}
+  
