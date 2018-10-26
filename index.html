@@ -10,17 +10,31 @@
 			fetch('js/data.json').then(response => {
 			return response.json();
 			}).then(data => {
-			for(i=0;i<=5;i++){
-			console.log(data.products[i])
+				var p=document.getElementsByTagName('ul');
+				for(var i=0; i<p.length; i++)
+				{
+					p[i].id='x'+i;
+					p[i].onclick=function()
+					{
+						var productinfo = document.getElementById("pname");
+						document.getElementById("popScroll").style.display='block';
+						productinfo.innerHTML = data.products[this.id.replace('x','')].name+' | '+data.products[this.id.replace('x','')].price+'.00&euro;'
+						document.getElementById("image").src = data.products[this.id.replace('x','')].img;
+						document.getElementById("home").innerHTML = data.products[this.id.replace('x','')].gender;
+					}
 			}}).catch(err => {
 			});
+			function Close(){
+            document.getElementById("popScroll").style.display='none';
+			}
+		
 		 </script>	
 	</head>
 	<body style="min-width: 980px;">
 		<div class="home-welcome">
 			<div class="home-welcome-text" style="background-image: url(assets/backgrounds/hero.jpg); height: 800px">
 				<div>
-						<div style="float: left; margin: 5px 0px 0px 23px;">
+						<div style="margin: 5px 0px 0px 23px;">
 								<a href="#">
 									<img style=" height: 40px; width: 120px;" src="assets/logo/logo.png">
 								</a>
@@ -52,51 +66,80 @@
 			</div>
 		<div class="home-prodlist">
 			<div style="padding: 20px 30px; width: 85%; margin: 0 auto;">
-				<ul style="float: left;">
-					<li style="float: left; padding: 25px;">
+				<ul style="float: left;" onclick='product()'>
+					<li style="padding: 25px;">
 						<div class="home-prodlist-img">
 							<img src="assets/products/backpack.png" class="home-prodlist-imgi">
-					
+							<div class='item'>BACKPACK<span class='price'>60.00&euro;</span></div>
 						</div>
+						
 					</li>
 				</ul>
-				<ul style="float: left;">
-					<li style="float: left; padding: 25px;">
+				<ul style="float: left;" onclick='product()'>
+					<li style="padding: 25px;">
 						<div class="home-prodlist-img">
 							<img src="assets/products/giacket.png" class="home-prodlist-imgi">
-					
+					        <div class='item'>GIACKET<span class='price'>60.00&euro;</span></div>
 						</div>
 					</li>
 				</ul>
-				<ul style="float: left;">
-					<li style="float: left; padding: 25px;">
+				<ul style="float: left;" onclick='product()'>
+					<li style="padding: 25px;">
 						<div class="home-prodlist-img">
-							<img src="assets/products/pants.png" class="home-prodlist-imgi"></a>
+							<img src="assets/products/pants.png" class="home-prodlist-imgi">
+						    <div class='item'>Pants forcraz<span class='price'>30.00&euro;</span></div>
+						</div>
 						
 					</li>
 				</ul>
-				<ul style="float: left;">
-					<li style="float: left; padding: 25px;">
+				<ul style="float: left;" onclick='product()'>
+					<li style="padding: 25px;">
 						<div class="home-prodlist-img">
-							<img src="assets/products/trekkingshoes.png" class="home-prodlist-imgi"></a>
+							<img src="assets/products/trekkingshoes.png" class="home-prodlist-imgi">
+							<div class='item'>trekking shoes<span class='price'>80.00&euro;</span></div>
+						</div>
 						
 					</li>
 				</ul>
-				<ul style="float: left;">
-					<li style="float: left; padding: 25px;">
+				<ul style="float: left;" onclick='product()'>
+					<li style="padding: 25px;">
 						<div class="home-prodlist-img">
-							<img src="assets/products/tshirt.png" class="home-prodlist-imgi"></a>
-						
+							<img src="assets/products/tshirt.png" class="home-prodlist-imgi">
+							<div class='item'>t-shirt<span class='price'>5.00&euro;</span></div>
+						</div>
 					</li>
 				</ul>
-				<ul style="float: left;">
-					<li style="float: left; padding: 25px;">
+				<ul style="float: left;" onclick='product()'>
+					<li style="padding: 25px;">
 						<div class="home-prodlist-img">
-							<img src="assets/products/tshirt_ladies.png" class="home-prodlist-imgi"></a>
-						
+							<img src="assets/products/tshirt_ladies.png" class="home-prodlist-imgi">
+							<div class='item'>t-shirt<span class='price'>20.00&euro;</span></div>
+						</div>
 					</li>
 				</ul>
 			</div>
 		</div>
+		<!-- content -->
+		
+		  
+		  <!-- popup -->
+		  <div class="popScroll" id='popScroll'>
+		  <div class="popup" id='popup'>
+		  <span class="ribbon top-left ribbon-primary">
+		  <small>Hello!</small>
+		  </span> 
+		  <h1>Yolomy Product</h1>
+		  <p id='pname'>T-SHIRT</p>
+		  <div id="option">
+		  <a href="#" id="home" class="boxi">Man</a> 
+		  <em>|</em>
+		  <button onclick='Close()' id="close" class="boxi closei">close</button>
+		  <div class='image-wrapper'>
+		  <div class='image'>
+		   <img src="assets/products/tshirt.png" id='image' class="home-prodlist-imgi">
+		</div>
+		  </div>
+		  </div></div>
+		  </div>
 	</body>
 </html>
