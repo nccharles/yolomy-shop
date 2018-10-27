@@ -12,13 +12,13 @@
 			return response.json();
 			}).then(data => {
 				//getting Tags that contain every Item 
-				var item=document.getElementsByTagName('ul');
-				for(var i=0; i<item.length; i++)
+				let item=document.getElementsByTagName('ul');
+				for(let i=0; i<item.length; i++)
 				{
 					item[i].id='x'+i;
 					item[i].onclick=function()
 					{
-						var productinfo = document.getElementById("pname");
+						let productinfo = document.getElementById("pname");
 						document.getElementById("popScroll").style.display='block';
 						productinfo.innerHTML = data.products[this.id.replace('x','')].name+' | '+data.products[this.id.replace('x','')].price+'.00&euro;'
 						document.getElementById("image").src = data.products[this.id.replace('x','')].img;
@@ -26,7 +26,7 @@
 					}
 			}}).catch(err => {
 			});
-			function Close(){
+			const Close =() => {
             document.getElementById("popScroll").style.display='none';
 			}
 		
