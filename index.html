@@ -7,14 +7,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<script>
+			//Json that returns all products
 			fetch('js/data.json').then(response => {
 			return response.json();
 			}).then(data => {
-				var p=document.getElementsByTagName('ul');
-				for(var i=0; i<p.length; i++)
+				//getting Tags that contain every Item 
+				var item=document.getElementsByTagName('ul');
+				for(var i=0; i<item.length; i++)
 				{
-					p[i].id='x'+i;
-					p[i].onclick=function()
+					item[i].id='x'+i;
+					item[i].onclick=function()
 					{
 						var productinfo = document.getElementById("pname");
 						document.getElementById("popScroll").style.display='block';
@@ -126,7 +128,7 @@
 		  <div class="popScroll" id='popScroll'>
 		  <div class="popup" id='popup'>
 		  <span class="ribbon top-left ribbon-primary">
-		  <small>Hello!</small>
+		  <small>Shop</small>
 		  </span> 
 		  <h1>Yolomy Product</h1>
 		  <p id='pname'>T-SHIRT</p>
